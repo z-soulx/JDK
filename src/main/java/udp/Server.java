@@ -18,7 +18,6 @@ public class Server {
 
         byte[] buffer = new byte[1024];
         DatagramPacket packet = new DatagramPacket(buffer, 1024);
-
         server.receive(packet);
 
         System.out.println("Server接收到: " + new String(buffer, 0, packet.getLength()));

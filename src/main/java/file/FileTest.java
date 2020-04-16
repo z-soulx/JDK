@@ -12,10 +12,13 @@ import java.nio.channels.FileLock;
 public class FileTest {
 
     public static void main(String[] args) throws IOException {
-        File file = new File("test");
+        File file = new File("test.text");
+        FileOutputStream fileOutputStream = new FileOutputStream(file);
+        fileOutputStream.getChannel();
         FileChannel channel = new RandomAccessFile(file, "rw").getChannel();
         new Thread(new GETLock(channel, 0, 2)).start();
         new Thread(new GETLock(channel, 1, 3)).start();
+        //  这样会报错，有个获取不上锁，如果改成0-2，2-3则都可以了.s
         //channel.close();
     }
 
