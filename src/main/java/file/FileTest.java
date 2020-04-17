@@ -15,6 +15,8 @@ public class FileTest {
         File file = new File("test.text");
         FileOutputStream fileOutputStream = new FileOutputStream(file);
         fileOutputStream.getChannel();
+        fileOutputStream.write('a');
+
         FileChannel channel = new RandomAccessFile(file, "rw").getChannel();
         new Thread(new GETLock(channel, 0, 2)).start();
         new Thread(new GETLock(channel, 1, 3)).start();

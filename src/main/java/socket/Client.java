@@ -17,12 +17,16 @@ public class Client {
         Socket socket = new Socket();
         socket.setTcpNoDelay(true);
         socket.connect(new InetSocketAddress("localhost", 8080));
-        InputStream is = socket.getInputStream();
+//        socket.connect(new InetSocketAddress("www.baidu.com", 443));
+
 
             OutputStream outputStream = socket.getOutputStream();
+                outputStream.write('a');
+
+        InputStream is = socket.getInputStream();
         byte[] data = new byte[8];
 //        is.read(data, 0, 8);
-        outputStream.write('a');
+
         //一端退出，但退出时并未关闭该连接，
         // 另一端如果在从连接中读数据则抛出该异常（Connection reset）。
         // 简单的说就是在连接断开后的读和写操作引起的。
