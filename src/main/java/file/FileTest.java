@@ -12,7 +12,7 @@ import java.nio.channels.FileLock;
 public class FileTest {
 
     public static void main(String[] args) throws IOException {
-        File file = new File("test.text");
+        File file = new File("test.txt");
         FileOutputStream fileOutputStream = new FileOutputStream(file);
         fileOutputStream.getChannel();
         fileOutputStream.write('a');
