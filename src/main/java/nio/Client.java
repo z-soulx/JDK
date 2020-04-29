@@ -52,21 +52,21 @@ public class Client {
         channel.write(ByteBuffer.wrap(dirty));
         int writed = channel.write(ByteBuffer.wrap(data));
         System.out.println(writed);*/
-        Socket socket = new Socket();
-        socket.connect(new InetSocketAddress("192.168.80.128", 8080));
+            Socket socket = new Socket();
+            socket.connect(new InetSocketAddress("localhost", 8080));
         try {
-            Thread.sleep(90000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        socket.close();
+//        socket.close();
     }
 
     @Test
     public void connectLocalHost() throws IOException, InterruptedException {
         Socket socket = new Socket();
-        socket.connect(new InetSocketAddress("192.168.80.128", 8080));
-        Thread.sleep(90000);
+        socket.connect(new InetSocketAddress("localhost", 8080));
+        Thread.sleep(9000);
         socket.close();
     }
 
