@@ -1,7 +1,9 @@
 package base;
 
 import java.util.HashMap;
+import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentLinkedQueue;
 import org.junit.Test;
 
 /**
@@ -40,6 +42,32 @@ public class T {
 			System.out.println(" rs:"+Integer.toBinaryString(rs));
 			System.out.println(" an:"+Integer.toBinaryString(ans));
 		}
+	}
+
+	@Test
+	public void concurrentQueue(){
+		Integer s =1;
+
+		System.out.println(s==(s=2));
+		System.out.println(s);
+		ConcurrentLinkedQueue<Integer> q =new ConcurrentLinkedQueue();
+		q.add(1);
+		q.add(2);
+		q.add(3);
+		q.add(3);
+
+	}
+	private String t(){
+		System.out.println("t");
+		return "";
+	}
+	private String t2(String s){
+		System.out.println("t2");
+		return  "11";
+	}
+	@Test
+	public void Queue(){
+		new ArrayBlockingQueue(1);
 	}
 
 }
